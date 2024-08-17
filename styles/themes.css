@@ -13,7 +13,9 @@
     --font-weight-card-text: 465;
     --stripe-color: #000;
     --background-color-start: #007f0c;
-    --background-color-end: #004306;  
+    --background-color-end: #004306;
+    --button-text-accent-color: #00cc14;
+    --like-icon-main-color: #00cc14;  
   }
 
 }
@@ -26,6 +28,8 @@
   --stripe-color: #000;
   --background-color-start: #007f0c;
   --background-color-end: #004306; 
+  --button-text-accent-color: #00cc14;
+  --like-icon-main-color: #00cc14;
 }
 
 @media (prefers-color-scheme: light) {
@@ -37,7 +41,10 @@
     --stripe-color: #d3d3d3;
     --background-color-start: #e7e7e7;
     --background-color-end: #1a1a1a;
+    --button-text-accent-color: #fff;
+    --like-icon-main-color: #000;
   }
+  
 }
 
 
@@ -49,6 +56,8 @@
   --stripe-color: #d3d3d3;
   --background-color-start: #e7e7e7;
   --background-color-end: #1a1a1a;
+  --button-text-accent-color: #fff;
+  --like-icon-main-color: #000;
 }
 
 

@@ -1,6 +1,7 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --main-font: 'Inter-Variable', Arial sans-serif;
-  --accent-font: 'PressStart2P-Regular', Arial sans-serif;
+  --main-font: 'Inter-Variable', Arial, sans-serif;
+  --accent-font: 'PressStart2P', 'fantasy', sans-serif;
   --stripe-size: 2px;
+  --like-icon-accent-color: #FF0000;
 }
