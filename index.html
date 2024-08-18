@@ -84,7 +84,7 @@
             </div>
             <ul class="card__button-container">
               <li>
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -165,7 +165,7 @@
             </div>
             <ul class="card__button-container">
               <li>
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -243,7 +243,7 @@
             </div>
             <ul class="card__button-container">
               <li>
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -323,7 +323,7 @@
             </div>
             <ul class="card__button-container">
               <li>
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -404,7 +404,7 @@
             </div>
             <ul class="card__button-container">
               <li>
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -482,7 +482,7 @@
             </div>
             <ul class="card__button-container">
               <li>
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -564,7 +564,7 @@
             </div>
             <ul class="card__button-container">
               <li>
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -612,9 +612,7 @@
           <article class="card">
             <h2 class="card__header">«Сейчас я здесь»</h2>
             <div class="card__img-container">
-              <span class="card__img-label lowercase"
-                >&lt;experience&gt;</span
-              >
+              <span class="card__img-label lowercase">&lt;experience&gt;</span>
               <picture>
                 <source
                   media="(max-width: 375px)"
@@ -648,7 +646,7 @@
             </div>
             <ul class="card__button-container">
               <li>
-                <button class="card__icon-button">
+                <button type="button" class="card__icon-button">
                   <svg
                     class="like-icon"
                     width="39"
@@ -696,9 +694,9 @@
     </main>
     <footer class="footer">
       <button
+        id="openDialogBtn"
         class="footer-button"
         type="button"
-        onclick="window['dialog-id'].show()"
         aria-controls="dialog-id"
       >
         <svg viewBox="0 0 24 24">
@@ -707,20 +705,34 @@
         <span class="button__text">Сохранить на память</span>
       </button>
     </footer>
-    <script src="./scripts/like.js"></script>
-    <dialog id="dialog-id" class="dialog">
+    <dialog id="dialog" class="dialog">
       <svg viewBox="0 0 24 24">
         <use href="#icon-diskette"></use>
       </svg>
       <span class="button__text">Вставьте дискету, чтобы продолжить</span>
       <button
         type="button"
-        onclick="window['dialog-id'].close()"
+        id="closeDialogBtn"
         class="button card__like-button"
       >
         <span class="button__text">Ok</span>
       </button>
     </dialog>
+
+    <script>
+      const dialog = document.getElementById("dialog");
+      const openDialogBtn = document.getElementById("openDialogBtn");
+      const closeDialogBtn = document.getElementById("closeDialogBtn");
+
+      openDialogBtn.addEventListener("click", () => {
+        dialog.showModal();
+      });
+
+      closeDialogBtn.addEventListener("click", () => {
+        dialog.close();
+      });
+    </script>
+    <script src="./scripts/like.js"></script>
   </body>
 </html>
 

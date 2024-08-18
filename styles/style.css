@@ -30,12 +30,12 @@
 }
 
 .main-title {
+  margin-block-start: 20px;
   color: var(--accent-color);
   font-weight: 400;
+  font-size: clamp(14px, 3.6154px + 2.7692vw, 23px);
   text-align: center;
   text-transform: uppercase;
-  margin-block-start: 20px;
-  font-size: clamp(14px, 3.6154px + 2.7692vw, 23px);
 }
 
 .logo {
@@ -51,7 +51,6 @@
   gap: 14px;
   margin: 25px 0 0 clamp(154px, -31.7692px + 49.5385vw, 315px);
   max-inline-size: 84px;
-
 }
 
 .theme-menu__list li {
@@ -64,7 +63,6 @@
   text-transform: uppercase;
   transition: 0.3s ease;
 }
-
 
 .theme-menu__button:hover {
   opacity: 0.6;
@@ -112,12 +110,12 @@
   background-color: currentColor;
   transform: scaleX(0);
   transform-origin: left;
+  transition: 0.3s ease;
 }
 
 .theme-menu__button:focus-visible::after {
   transform: scaleX(1);
 }
-
 
 .page {
   color: var(--accent-color);
@@ -142,8 +140,8 @@
       var(--background-color-start) 0.01%, 
       var(--background-color-end)
     );
-    background-size: cover;
-    background-attachment: fixed;
+  background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--font-weight-card-text);
@@ -178,15 +176,14 @@
   position: relative;
   border-bottom: 1px solid var(--accent-color);
   line-height: 0;
-
 }
 
 .card__img {
+  object-fit: cover;
+  object-position: center;
   background-color: var(--background-color);
   block-size: 100%;
   inline-size: 100%;
-  object-fit: cover;
-  object-position: center;
  
 }
 
@@ -261,7 +258,7 @@
   outline: none;
 }
 
-.buttonn:focus-visible,
+.button:focus-visible,
 .footer-button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
 }
@@ -405,7 +402,6 @@
   animation: sparks-animations 0.3s ease-in 0.3s alternate;
 }
 
-
 /* Footer */
 
 .footer-button {
@@ -420,6 +416,7 @@
   border: 2px solid var(--accent-color);
   padding: 15px 20px;
   background-color: var(--background-color);
+  transition: 0.3s ease;
 }
 
 .footer-button svg {
@@ -430,10 +427,8 @@
   mix-blend-mode: difference;
 }
 
-.dialog[open] {
+dialog[open] {
   position: fixed;
-  top: 50%;
-  left: 0;
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: auto auto;
@@ -448,12 +443,12 @@ dialog::backdrop {
   background: #000;
 }
 
-.dialog .card__like-button {
+dialog .card__like-button {
   grid-column: span 2;
   max-inline-size: 293px;
 }
 
-.dialog svg {
+dialog svg {
   align-self: center;
   color: var(--button-text-accent-color);
   block-size: 39px;
@@ -461,7 +456,7 @@ dialog::backdrop {
   mix-blend-mode: difference;
 }
 
-.dialog .button__text {
+dialog .button__text {
   line-height: 1.5;
   text-transform: uppercase;
   max-inline-size: 234px;
@@ -490,7 +485,6 @@ dialog::backdrop {
   
 }
 
-/* card__content, card text , img container , */
 
 
 
