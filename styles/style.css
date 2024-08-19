@@ -145,6 +145,7 @@
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: 'wght' var(--font-weight-card-text);
+  padding-block-end: 103px;
 }
 
 @supports (font-variation-settings: normal) {
@@ -190,7 +191,7 @@
 .card__img-label {
   position: absolute;
   top: 30px; 
-  right: 25px;
+  right: clamp(11px, 6.0704px + 1.3146vw, 25px);
   opacity: 0.5;
   color: var(--accent-color);
   font-family: var(--accent-font), 'fantasy', sans-serif;
@@ -247,24 +248,20 @@
   border: 2px solid var(--accent-color);
   padding: 12.5px 37px;
   font-size: 14px;
-  line-height: 0;
   transition: 0.3s ease;
   max-inline-size: 130px;
-  block-size: 38px;
+  max-block-size: 38px;
 }
 
-.button:focus,
-.footer-button:focus {
+.button:focus {
   outline: none;
 }
 
-.button:focus-visible,
-.footer-button:focus-visible {
+.button:focus-visible {
   box-shadow: 2px 2px 0 var(--accent-color);
 }
 
-.button::after,
-.footer-button::after {
+.button::after {
   content: '';
   position: absolute;
   inset: 0;
@@ -277,8 +274,7 @@
   inline-size: 100%;
 }
 
-.button:hover::after,
-.footer-button:hover::after {
+.button:hover::after {
   transform: scaleX(1);
 }
 
@@ -305,8 +301,9 @@
 
 .card__icon-button:focus-visible .like-icon {
   outline: 2px solid var(--accent-color);
-  transition: 0.3s ease;
 }
+
+/* Heart Animgation */
 
 .like-icon {
   overflow: visible;
@@ -314,49 +311,46 @@
 
 .like-icon__core {
   fill: transparent;
-  transition: fill 0.03s ease-in-out;
+  transition: fill 0.3s linear;
+  transition-delay: 0.03s;
 }
 
-/* here */
+.card__icon-button:hover .like-icon__core {
+  fill: var(--like-icon-main-color);
+  transition-delay: 0s;
+}
+
+.card__icon-button:active .like-icon__core {
+  fill: var(--like-icon-accent-color);
+}
+
+.like-icon__main-body {
+  fill: transparent;
+  transition: fill 0.3s linear; 
+}
+
+.card__icon-button:hover .like-icon__main-body {
+  fill: var(--like-icon-main-color);
+  transition-delay: 0.05s;
+}
+
+.card__icon-button:active .like-icon__main-body {
+  fill: var(--like-icon-accent-color);
+}
+
 .like-icon__contour {
   fill: var(--like-icon-main-color);
   transition: fill 0.3s linear;
 }
 
-.like-icon__main-body {
-  fill: transparent;
-  transition: fill 0.3s ease-in-out;
-}
-
-.card__icon-button:hover .like-icon__core {
-  fill: var(--like-icon-main-color);
-  transition: fill 0.3s ease-in-out;
-}
-
-.card__icon-button:hover .like-icon__main-body {
-  fill: var(--like-icon-main-color);
-  transition: fill 0.3s ease-in-out;
-  transition-duration: 0.05s;
-}
-
-.card__icon-button:active .like-icon__core {
+.like-icon.is-liked .like-icon__core,
+.like-icon.is-liked .like-icon__main-body,
+.like-icon.is-liked .like-icon__contour {
   fill: var(--like-icon-accent-color);
-  transition: fill 0.3s ease-in-out;
-}
-
-.like-icon.is-liked .like-icon__core {
-  fill: var(--like-icon-accent-color);
-  transition: fill 0.3s ease-in-out;
-}
-
-.like-icon.is-liked .like-icon__main-body {
-  fill: var(--like-icon-accent-color);
-  transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .like-icon__contour {
-  fill: var(--like-icon-accent-color);
-  transition: fill 0.3s ease-in-out;
   transition-delay: 0.06s;
 }
 
@@ -405,18 +399,15 @@
 /* Footer */
 
 .footer-button {
-  position: relative;
-  display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: center;
   gap: 8px;
   margin: 0 auto;
   margin-block-start: 50px;
-  border: 2px solid var(--accent-color);
   padding: 15px 20px;
   background-color: var(--background-color);
-  transition: 0.3s ease;
+  max-block-size: 55px;
+  max-inline-size: 340px;
 }
 
 .footer-button svg {
@@ -464,8 +455,15 @@ dialog .button__text {
 }
 
 @media (width <= 375px) {
+
+  .page {
+    padding-block-end: 100px;
+  }
+
   .footer-button {
     flex-direction: column;
+    max-block-size: 85px;
+    max-inline-size: 310px;
   }
 
   .card__header {
