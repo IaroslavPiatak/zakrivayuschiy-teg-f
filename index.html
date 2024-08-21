@@ -2,7 +2,10 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <!--Проблему удалось решить только обновленным тегом выше. Притом до этого горизонатальный скрол появлялся только если открыть инструменты разработчика, указать ширину (537, допустим), ЗАКРЫТЬ ИНСТРУМЕНТЫ И ОТКРЫТЬ ИХ СНОВА и только тогда,
+    появлялся горизонтальный скрол. И если дальше тянуть в разные стороны viewport , скрол все равно остается. Но если сбросить viewport до 700 и больше, закрыть интсрументы и открыть снова, то скрол пропадет. Даже если в ручную дотянуть его до 537, скрол не появится.
+    Тестировал на разных устройствах и браузерах.-->
     <meta name="color-scheme" content="light dark" />
     <title>Закрывающий тег</title>
     <link rel="icon" href="./images/favicon.ico" sizes="any" />

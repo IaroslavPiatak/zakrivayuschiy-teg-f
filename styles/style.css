@@ -14,17 +14,12 @@
 
 */
 
-html, body {
-  overflow-x: hidden;
-}
-
 .width-centred-container {
   width: clamp(375px, 0px + 100cqi, 700px);;
   margin: 0 auto;
 }
 
 .header {
-  margin-block-start: 100px;
   margin-block-end: 100px;
   border: 2px solid var(--accent-color);
   padding: clamp(120px, 101.5385px + 4.9231vw, 136px) 0 25px;
@@ -122,6 +117,7 @@ html, body {
 }
 
 .page {
+  padding-block-start: 100px;
   padding-block-end: 103px;
   color: var(--accent-color);
   font-family: var(--main-font), 'Arial', sans-serif;
